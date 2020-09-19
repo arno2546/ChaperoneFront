@@ -1,0 +1,67 @@
+body{
+    font-family: 'Lora', serif;
+}
+.navbar-brand a:hover,.navbar-brand a:focus{
+    text-decoration: none;
+}
+#header-nav{
+background-color: #212f3d ;
+border-radius: 0;
+border: 0;
+}
+.navbar-brand h1{
+font-family: 'Oswald', sans-serif; 
+color: #dadfe3;
+font-size:2.5em;
+font-weight: bold;
+text-shadow: 1px 1px 1px #222;
+margin-top:0;
+margin-bottom: 0;
+padding-top: 5px;
+padding-bottom: 5px;
+line-height: .75;
+}
+.input-group{
+    margin-top: 150px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input-group-text{
+    background-color: #212f3d;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.input-group input{
+    height: 50px;
+    border-color:#212f3d ;
+    font-weight: bold;
+    color: #212f3d;
+    font-size: 1.2em;
+}
+#checkBoxContainer{
+    text-align: center;
+    margin-top: 20px;
+    border: 2px solid #212f3d;
+    width: 60%;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+#genderCheckBoxContainer{
+    border: 2px solid #212f3d;
+    margin-top: 20px;
+    width: 40%;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+}
+#checkBoxContainer hr,#genderCheckBoxContainer hr{
+    margin: 0;
+    color: #212f3d;
+}
+#searchButton{
+    margin-left: 46%;
+    margin-top: 20px;
+    font-size: 1.2em;
+}

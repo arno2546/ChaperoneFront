@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Styles/Search.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <title>Search</title>
+</head>
+<body>
+    <header>
+       <nav id="header-nav" class="navbar navbar-default">
+           <div class="container">
+                <div class="navbar-brand">
+                    <a href=""><h1>Chaperone</h1></a>
+                </div>
+           </div>
+       </nav>
+    </header>
+    <div id="main-content" class="container">
+        <div id="searchString" class="container">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                <span class="input-group-text">Enter Destination</span>
+                </div>
+                <input type="text" id="SearchString" aria-label="Last name" class="form-control">
+            </div>
+        </div>
+        <div id="checkBoxContainer" class="container">
+            <h3>What are you intersted in?</h3><hr>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="CultureCheck" value="option1">
+                <label class="form-check-label" for="CultureCheck">Culture</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="SportsCheck" value="option2">
+                <label class="form-check-label" for="SportsCheck">Sports</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="FoodCheck" value="option3">
+                <label class="form-check-label" for="FoodCheck">Food</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="NightLifeCheck" value="option3">
+                <label class="form-check-label" for="NightLifeCheck">Night Life</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="FestivalCheck" value="option3">
+                <label class="form-check-label" for="FestivalCheck">Festival</label>
+              </div>
+        </div>
+        <div id="genderCheckBoxContainer" class="container">
+            <h3>Any gender preference?</h3><hr>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="MaleCheck" value="option1">
+                <label class="form-check-label" for="MaleCheck">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="FemaleCheck" value="option2">
+                <label class="form-check-label" for="FemaleCheck">Female</label>
+              </div>
+        </div>
+        <div id="search-btn" class="container">
+            <button id="searchButton" type="button" class="btn btn-dark">Search</button>
+        </div>
+    </div>
+</body>
+</html>
