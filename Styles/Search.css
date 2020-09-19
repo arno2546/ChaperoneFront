@@ -65,3 +65,16 @@ line-height: .75;
     margin-top: 20px;
     font-size: 1.2em;
 }
+.panel-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: #222;
+    border-top: 0;
+    font-size:.8em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+}
