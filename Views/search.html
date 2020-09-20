@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../Styles/Search.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <script src="../Scripts/jquery-3.5.1.js"></script>
+    <script src="../Scripts/search.js"></script>
     <title>Search</title>
 </head>
 <body>
@@ -64,6 +66,12 @@
         </div>
         <div id="search-btn" class="container">
             <button id="searchButton" type="button" class="btn btn-dark">Search</button>
+        </div>
+        <div id="msg" class="flex-container">
+          <!-- Resutls are loaded here -->
+        </div>
+        <div>
+          <span id="errMsg"></span>
         </div>
     </div>
     <footer class="panel-footer">
