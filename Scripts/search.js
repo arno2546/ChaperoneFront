@@ -104,9 +104,12 @@ $(document).ready(function(){
                 if(xmlHttp.status=200){
                     var guides = xmlHttp.responseJSON;
                     var str='';
+                    $("#resultLable").html("Result(s):");
+                    $("#line").html("<hr>");
                     //window.location.replace("../views/searchResults.html");
                     if(guides.length<1){
                         $("#errMsg").html("Sorry No results found :(");
+                        alert("No result");
                     }
                     for(var i=0;i<guides.length;i++){
                         str+="<div><span id=\"guide-name\">"+guides[i].Name+"</span><br><span id=\"guide-loc\">"+guides[i].Location+"</span></div>"
