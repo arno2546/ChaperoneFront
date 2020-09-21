@@ -27,6 +27,7 @@ $(document).ready(function () {
         bio= $("#bio").val();
         if(email.trim()==""){
             alert("Email cannot be empty");
+            // use this $("#emailErr").html("Email cannot be empty");
         }
         if(name.trim()==""){
             alert("Name cannot be empty");
