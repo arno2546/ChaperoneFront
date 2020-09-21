@@ -2,13 +2,32 @@ $(document).ready(function () {
     var Email;
     var Password;
     $("#logIn-btn").click(function(){
+        var valid;
+        var validpass;
+        $("#loginMsg").html("");
         Email=$("#loginEmail").val();
         Password=$("#loginPass").val();
         if(Email.trim()==""){
-            //do some validation 
+            alert("Email is Required");
+            valid=false;
         }
-        $("#loginMsg").html("");
-        logIn();
+        else if(!Email.includes("@") || !Email.includes(".com")){
+            alert("Enter proper Email address");
+            valid=false;
+        }
+        else{
+            valid=true;
+        }
+        if(Password.trim()==""){
+            alert("Password is Required");
+            validpass=false;
+        }
+        else{
+            validpass=true;
+        }
+        if(valid && validpass){
+            logIn();
+        }
     });
 
     function logIn(){
@@ -27,6 +46,9 @@ $(document).ready(function () {
                     var LogInfo = xmlHttp.responseJSON;
                     if(LogInfo.UserType=="Guide"){
                         $("#loginMsg").html("Guide");
+                        window.location.href = 'http://localhost/ChaperoneFront/Views/GuideViews/';
+                        sessionStorage.setItem('guideEmail',Email);
+                        sessionStorage.setItem('guidePass',Password);
                     }
                     console.log(LogInfo);
                 }
