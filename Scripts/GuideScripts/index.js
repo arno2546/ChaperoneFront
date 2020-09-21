@@ -1,4 +1,10 @@
 $(document).ready(function () {
-    console.log(sessionStorage.getItem('guideEmail'));
-    console.log(sessionStorage.getItem('guidePass'));
+    if(sessionStorage.getItem('loggedIn')==null){
+        window.location.href = 'http://localhost/ChaperoneFront/Views/logIn.html';
+    }
+    console.log(sessionStorage.getItem('guideUname'));
+    console.log(sessionStorage.getItem('guideId'));
+    console.log(sessionStorage.getItem('guideCon'));
+    //console.log(sessionStorage.getItem('guidePass'));
+    console.log(sessionStorage.getItem('guideMail'));
 });

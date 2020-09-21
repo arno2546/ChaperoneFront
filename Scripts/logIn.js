@@ -46,9 +46,13 @@ $(document).ready(function () {
                     var LogInfo = xmlHttp.responseJSON;
                     if(LogInfo.UserType=="Guide"){
                         $("#loginMsg").html("Guide");
-                        window.location.href = 'http://localhost/ChaperoneFront/Views/GuideViews/';
-                        sessionStorage.setItem('guideEmail',Email);
+                        sessionStorage.setItem('loggedIn','true');
+                        sessionStorage.setItem('guideUname',LogInfo.UserName);
+                        sessionStorage.setItem('guideId',LogInfo.Id);
+                        sessionStorage.setItem('guideCon',LogInfo.Contact);
                         sessionStorage.setItem('guidePass',Password);
+                        sessionStorage.setItem('guideMail',Email);
+                        window.location.href = 'http://localhost/ChaperoneFront/Views/GuideViews/';
                     }
                     console.log(LogInfo);
                 }
