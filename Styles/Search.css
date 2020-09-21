@@ -73,7 +73,7 @@ line-height: .75;
     background-color: #222;
     border-top: 0;
     font-size:.8em;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;

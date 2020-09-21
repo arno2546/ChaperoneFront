@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
+    <link rel="stylesheet" href="../Styles/CreateGuide.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <script src="../Scripts/jquery-3.5.1.js"></script>
+    <script src="../Scripts/createGuide.js"></script>
+    <title>Chaperone:Become a Guide</title>
+</head>
+<body>
+   <div id="header">
+       <!-- Header is loaded here using jquery -->
+   </div>
+   <h3 id="Become-guide-lable" class="text-center"> Become a Guide:</h3>
+    <hr>
+   <div id="main-content" class="container">
+       
+       <div id="GuideForm" class="container">
+        <form>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com">
+              <span id="emailErr"> </span>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Type name here">
+                <span id="nameErr"> </span>
+              </div>
+            <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Choose a strong password">
+            <span id="nameErr"> </span>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="location" placeholder="i.e: Dhaka, Bangladesh">
+                <span id="nameErr"> </span>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact</label>
+                <input type="text" class="form-control" id="contact" placeholder="Contact Number">
+                <span id="contactErr"> </span>
+            </div>
+            <div class="form-group">
+              <label for="genderSelect">Gender</label>
+              <select class="form-control" id="genderSelect">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Others</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="langSelect">Language(s)</label>
+                <select class="form-control" id="langSelect">
+                  <option>English</option>
+                  <option>Spanish</option>
+                  <option>Both</option>
+                </select>
+              </div>
+            <div class="form-group">
+              <label for="bio">Bio</label>
+              <textarea class="form-control" id="bio" rows="3" placeholder="Write about yourself"></textarea>
+            </div>
+            <div id="checkBoxContainer" class="container">
+                <h3>Select interest(s)</h3><hr>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="CultureCheck" value="option1">
+                    <label class="form-check-label" for="CultureCheck">Culture</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="SportsCheck" value="option2">
+                    <label class="form-check-label" for="SportsCheck">Sports</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="FoodCheck" value="option3">
+                    <label class="form-check-label" for="FoodCheck">Food</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="NightLifeCheck" value="option3">
+                    <label class="form-check-label" for="NightLifeCheck">Night Life</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="FestivalCheck" value="option3">
+                    <label class="form-check-label" for="FestivalCheck">Festival</label>
+                  </div>
+            </div>
+            <div id="submit-btn" class="container">
+                <button id="submitButton" type="button" class="btn btn-dark">Submit</button>
+            </div>
+          </form>
+        </div>
+       </div>
+   </div>
+   <div id="footer">
+       <!-- Footer is loaded here using jquery -->
+   </div>
+</body>
+</html>
