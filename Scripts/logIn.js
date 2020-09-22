@@ -46,7 +46,7 @@ $(document).ready(function () {
                     var LogInfo = xmlHttp.responseJSON;
                     if(LogInfo.UserType=="Guide"){
                         $("#loginMsg").html("Guide");
-                        sessionStorage.setItem('loggedIn','true');
+                        sessionStorage.setItem('GuideloggedIn','true');
                         sessionStorage.setItem('guideUname',LogInfo.UserName);
                         sessionStorage.setItem('guideId',LogInfo.Id);
                         sessionStorage.setItem('guideCon',LogInfo.Contact);
