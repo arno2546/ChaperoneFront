@@ -21,6 +21,10 @@ $(document).ready(function () {
         if(email.trim()==""){
             alert("Email cannot be empty");
         }
+        else if(!email.includes("@") || !email.includes(".com")){
+            alert("Enter proper Email address");
+            validation=false;
+        }
         if(name.trim()==""){
             alert("Name cannot be empty");
             validation=false;
