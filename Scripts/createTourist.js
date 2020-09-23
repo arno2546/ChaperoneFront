@@ -63,14 +63,14 @@ $(document).ready(function () {
             },
             complete:function(xmlHttp,status){
                 if(xmlHttp.status==201){
-                    alert("Successfully Created Gen..Please Log In");
+                    alert("Successfully Created Account..Please Log In");
                     $("#email1").val("");
                     $("#name1").val("");
                     $("#password1").val("");
                     $("#location1").val("");
                     $("#contact1").val("");
                     $("#langSelect1").val("");
-                    
+                }
                
                 else{
                     console.log(xmlHttp.status+":"+xmlHttp.statusText); 
