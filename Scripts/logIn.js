@@ -53,6 +53,16 @@ $(document).ready(function () {
                         sessionStorage.setItem('guidePass',Password);
                         sessionStorage.setItem('guideMail',Email);
                         window.location.href = 'http://localhost/ChaperoneFront/Views/GuideViews/';
+                    } 
+                    if(LogInfo.UserType=="Gen"){
+                        $("#loginMsg").html("Gen");
+                        sessionStorage.setItem('genloggedIn','true');
+                        sessionStorage.setItem('genUname',LogInfo.UserName);
+                        sessionStorage.setItem('genId',LogInfo.Id);
+                        sessionStorage.setItem('genCon',LogInfo.Contact);
+                        sessionStorage.setItem('genPass',Password);
+                        sessionStorage.setItem('genMail',Email);
+                        window.location.href = 'http://localhost/ChaperoneFront/Views/TouristViews/TouristIndex.html';
                     }
                     console.log(LogInfo);
                 }

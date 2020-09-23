@@ -1,0 +1,114 @@
+body{
+    font-family: 'Lora', serif;
+}
+.navbar-brand a:hover,.navbar-brand a:focus{
+    text-decoration: none;
+}
+#header-nav{
+background-color: #212f3d ;
+border-radius: 0;
+border: 0;
+margin-bottom: 20px;
+}
+.navbar-brand{
+font-family: 'Oswald', sans-serif; 
+color: #dadfe3;
+font-size:3em;
+font-weight: bold;
+text-shadow: 1px 1px 1px #222;
+margin-top:0;
+margin-bottom: 10px;
+padding-top: 5px;
+padding-bottom: 5px;
+line-height: .75;
+margin-left: 50px;
+}
+#navbarNav{
+    margin-left: 45%;
+}
+#WelcomeLable{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 2.2em;
+}
+.input-group{
+    margin-top: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input-group-text{
+    background-color: #212f3d;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.input-group input{
+    height: 50px;
+    border-color:#212f3d ;
+    font-weight: bold;
+    color: #212f3d;
+    font-size: 1.2em;
+}
+#checkBoxContainer{
+    text-align: center;
+    margin-top: 20px;
+    border: 2px solid #212f3d;
+    width: 60%;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+#genderCheckBoxContainer{
+    border: 2px solid #212f3d;
+    margin-top: 20px;
+    width: 40%;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+}
+#checkBoxContainer hr,#genderCheckBoxContainer hr{
+    margin: 0;
+    color: #212f3d;
+}
+#searchButton{
+    margin-left: 46%;
+    margin-top: 20px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;  
+    margin-top: 40px;
+    margin-bottom: 10%;
+}
+
+.flex-container > div {
+    background-color: #212f3d;
+    width: auto;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+   
+}
+.flex-container > div:hover {
+    box-shadow: 1px 10px 15px 3px #3498DB ;
+    transition-duration: .4s;
+}
+
+#guide-name{
+    font-size: 1.2em;
+    margin: 0;
+}
+#guide-loc{
+    font-size: .8em;
+    margin: 0;
+}
+#resultLable{
+    margin-top: 15px;
+}

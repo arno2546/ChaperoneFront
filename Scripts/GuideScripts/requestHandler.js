@@ -1,5 +1,7 @@
 $(document).ready(function () {
-   
+    if(sessionStorage.getItem('GuideloggedIn')!='true'){
+        window.location.href = 'http://localhost/ChaperoneFront/Views/logIn.html';
+    }
     console.log(getParameter('reqId'));
     console.log(getParameter('action'));
     var reqId = getParameter('reqId');
