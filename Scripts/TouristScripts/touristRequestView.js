@@ -47,7 +47,7 @@ $(document).ready(function () {
                             str+="<td><a href=\"http://localhost/ChaperoneFront/Views/TouristViews/TouristRequestHandler.html?action=Completed&reqId="+data[i].RequestId+"\">Close</a><td><tr>";
                         }
                         if(data[i].RequestState=="Completed"){
-                            str+="<td><a href=\"http://localhost/ChaperoneFront/Views/TouristViews/TouristRequestHandler.html?action=Completed&reqId="+data[i].RequestId+"\">Review</a><td><tr>";
+                            str+="<td><a href=\"http://localhost/ChaperoneFront/Views/TouristViews/TouristReviewView.html?reqId="+data[i].RequestId+"\">Review</a><td><tr>";
                         }
                         else{
                             str+="<td></td><tr>";
