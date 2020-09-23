@@ -29,7 +29,8 @@ $(document).ready(function () {
     getRequests();
     $("#logOut").click(function(){ 
         sessionStorage.clear();
-        window.location.href="http://localhost/ChaperoneFront/Views/logIn.html";
+        window.location.replace("http://localhost/ChaperoneFront/Views/logIn.html");
+        
     });
 
     $("#submitButton").click(function(){
