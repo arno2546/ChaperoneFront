@@ -180,7 +180,13 @@ $(document).ready(function () {
                     }
                     $(reqTableHead).html(tableHead);
                     for(var i = 0; i<data.length;i++){
-                        str+="<tr><td>"+data[i].Location +"</td><td>"+data[i].TouristId +"</td><td>"+data[i].RequestState+"</td><tr>";
+                        str+="<tr><td>"+data[i].Location +"</td><td>"+data[i].TouristId +"</td><td>"+data[i].RequestState+"</td>";
+                        if(data[i].RequestState=="Pending"){
+                            str+="<td><a href=\"http://localhost/ChaperoneFront/Views/GuideViews/requestHandler.html?action=accepted&reqId="+data[i].RequestId+"\">Accept</a> <a href=\"http://localhost/ChaperoneFront/Views/GuideViews/requestHandler.html?action=rejected&reqId="+data[i].RequestId+"\">Reject</a><td><tr>";
+                        }
+                        else{
+                            str+="<td></td><tr>";
+                        }
                         $("#reqTableBody").html(str);
                     };  
                 }
