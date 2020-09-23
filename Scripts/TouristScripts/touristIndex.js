@@ -128,6 +128,8 @@ $(document).ready(function () {
                     for(var i=0;i<guides.length;i++){
                         str+="<div><span id=\"guide-name\">"+guides[i].Name+"</span><br><span id=\"guide-loc\">"+guides[i].Location+"</span><br><a id=\"detailsLink\" href=\"http://localhost/ChaperoneFront/Views/TouristViews/GuideDetailsView.html?guideId="+guides[i].UserId+"\">View Details</a></div>"
                         $("#msg").html(str);
+                        sessionStorage.setItem('startDate',$("#startDate").val());
+                        sessionStorage.setItem("endDate",$("#endDate").val());
                     }                    
                 }
                 else{

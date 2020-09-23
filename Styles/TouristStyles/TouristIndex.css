@@ -111,3 +111,14 @@ margin-left: 50px;
 #resultLable{
     margin-top: 15px;
 }
+#startDate, #endDate{
+    width: 300px;
+    border: 2px solid #495057;
+    margin-top: 15px;
+}
+#startDate{
+    margin-left: 45%;
+}
+#endDate{
+    margin-right: 30px;;
+}

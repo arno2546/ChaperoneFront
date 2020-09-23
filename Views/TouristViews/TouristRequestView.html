@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chaperone: Tourist Request Handler</title>
+    <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../../Styles/TouristStyles/TouristIndex.css">
-    <link rel="stylesheet" href="../../Styles/TouristStyles/GuideDetailsView.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
     <script src="../../Scripts/jquery-3.5.1.js"></script>
-    <script src="../../Scripts/TouristScripts/guideDetailsView.js"></script>
-
+    <script src="../../Scripts/TouristScripts/touristRequestView.js"></script>
 </head>
 <body>
     <header>
@@ -20,8 +20,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#requests">Requests</a>
+                <li class="nav-item" active>
+                  <a class="nav-link" href="http://localhost/ChaperoneFront/Views/TouristViews/TouristRequestView.html">Requests</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#GuideForm">Edit Profile</a>
@@ -31,19 +31,16 @@
             </div>
           </nav>
      </header>
+     <h3 id="WelcomeLable"></h3><hr>
      <div id="main-content" class="container">
-        <h3 id="WelcomeLable" class="text-center">Guide Profile:</h3><hr>
-        <div id="info" class="container">
-            
-            <h3 id="name"></h3>
-            <h3 id="email"></h3>
-            <h3 id="contact"></h3>
-            <h3 id="location"></h3>
-            <h3 id="gender"></h3>
-            <h3 id="rate"></h3><hr>
-            <span id="interests"></span><hr>
-        </div> 
-        <button type="button" id="request" class="btn btn-success">Send Request</button>
+        <div id="requests">
+            <table id="reqTable" class="table table-dark">
+              <thead id="reqTableHead">
+                
+              </thead>
+              <tbody id="reqTableBody"></tbody>
+            </table><hr>
+          </div>
      </div>
 </body>
 </html>
