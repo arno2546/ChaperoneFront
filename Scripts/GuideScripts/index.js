@@ -26,7 +26,7 @@ $(document).ready(function () {
     var sid = sessionStorage.getItem('guideId');
     var scontact = sessionStorage.getItem('guideCon');
     setVal();
-        
+    getRequests();
     $("#logOut").click(function(){ 
         sessionStorage.clear();
         window.location.href="http://localhost/ChaperoneFront/Views/logIn.html";
@@ -163,5 +163,31 @@ $(document).ready(function () {
                 }
             }
        })
+    }
+
+    function getRequests(){
+        $.ajax({
+            url: "https://localhost:44337/api/users/"+sid+"/requests",           
+            method:"get",
+            complete: function(xmlHttp,status){
+                if(xmlHttp.status==200){
+                    var data = xmlHttp.responseJSON;
+                    var str = '';
+                    var tableHead = "<th scope=\"col\">Location</th><th scope=\"col\">Tourist Id</th><th scope=\"col\">Request Status</th><th scope=\"col\">Actions</th>";
+                    if(data.length<1){
+                        //alert("No requests");
+                        tableHead="<th scope=\"col\">Sorry You Have no requests :(</th>";
+                    }
+                    $(reqTableHead).html(tableHead);
+                    for(var i = 0; i<data.length;i++){
+                        str+="<tr><td>"+data[i].Location +"</td><td>"+data[i].TouristId +"</td><td>"+data[i].RequestState+"</td><tr>";
+                        $("#reqTableBody").html(str);
+                    };  
+                }
+                else{
+                    console.log(xmlHttp.status+":"+xmlHttp.statusText); 
+                }
+            }
+        });
     }
 });
