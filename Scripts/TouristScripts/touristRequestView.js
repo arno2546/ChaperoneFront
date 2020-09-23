@@ -24,6 +24,11 @@ $(document).ready(function () {
         $("#WelcomeLable").html(suname+"'s Requests");
     }
 
+    $("#logOut").click(function(){ 
+        sessionStorage.clear();
+        window.location.replace("http://localhost/ChaperoneFront/Views/logIn.html");
+    });
+    
     function getRequests(){
         $.ajax({
             url: "https://localhost:44337/api/users/"+sid+"/requests",           
