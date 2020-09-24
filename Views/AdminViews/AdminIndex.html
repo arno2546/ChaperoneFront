@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="../../Styles/AdminStyles/AdminIndex.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="../../Scripts/jquery-3.5.1.js"></script>
     <script src="../../Scripts/AdminScripts/adminIndex.js"></script>
+    <script src="../../Scripts/AdminScripts/adminGenderRatio.js"></script>
 </head>
 <body>
     <header>
@@ -37,7 +40,17 @@
      </header>
      <h3 id="WelcomeLable"></h3><hr>
      <div id="main-content" class="container">
-        <h3 id="Lable">User(s):</h3><hr>
+      <div class="wrapper">
+        <div class="container d-flex flex-column justify-content-center align-items-center">
+          <div class="title text-center mb-5">
+            <h1 id="Lable">Guide Gender Ratio:</h1>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <h3 id="Lable">User(s):</h3><hr>
         <div id="users">
             <table id="userTable" class="table table-dark">
               <thead id="userTableHead">
