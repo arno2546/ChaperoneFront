@@ -1,10 +1,13 @@
 $(document).ready(function () {
     if(sessionStorage.getItem('genloggedIn')!='true'){
-        window.location.href = 'http://localhost/ChaperoneFront/Views/logIn.html';
+        window.location.replace('http://localhost/ChaperoneFront/Views/logIn.html');
     }
     var suname = sessionStorage.getItem('genUname');
     console.log(suname);
-   
+    $("#logOut").click(function(){ 
+        sessionStorage.clear();
+        window.location.replace("http://localhost/ChaperoneFront/Views/logIn.html");
+    });
     setVal();
     console.log(getParameter('guideId'));
     var gId = getParameter('guideId');
@@ -13,8 +16,8 @@ $(document).ready(function () {
     console.log(gId);
     console.log(sessionStorage.getItem('startDate'));
     console.log(sessionStorage.getItem('endDate'));
+    var spassword = sessionStorage.getItem('genPass');
     var smail = sessionStorage.getItem('genMail');
-    var sid = sessionStorage.getItem('genId');
     getGuide();
 
     function getParameter( paramName ){
