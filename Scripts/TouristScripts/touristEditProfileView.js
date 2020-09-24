@@ -78,7 +78,9 @@ $(document).ready(function () {
             url: "https://localhost:44337/api/users/"+sid,           
             method:"put",
             headers:{
-                contentType:"application.json"
+                contentType:"application.json",                
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+                
             },
             data:{
                 Email: email,

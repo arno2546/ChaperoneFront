@@ -44,6 +44,9 @@ $(document).ready(function () {
         $.ajax({
             url: "https://localhost:44337/api/requests/"+reqId,           
             method:"get",
+            headers:{
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
             complete: function(xmlHttp,status){
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;
@@ -67,7 +70,9 @@ $(document).ready(function () {
             url: "https://localhost:44337/api/requests/"+reqId,           
             method:"put",
             headers:{
-                contentType:"application.json"
+                contentType:"application.json",                
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+                
             },
             data:{
                 Location: reqLocation,
@@ -95,7 +100,8 @@ $(document).ready(function () {
             url: "https://localhost:44337/api/reviews",           
             method:"post",
             headers:{
-                contentType:"application.json"
+                contentType:"application.json",                
+                Authorization: "Basic "+btoa(smail+":"+spassword)
             },
             data:{
                 ReviewString:$("#reviewStr").val() ,

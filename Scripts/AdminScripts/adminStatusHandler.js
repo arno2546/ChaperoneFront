@@ -6,6 +6,8 @@ $(document).ready(function () {
     console.log(getParameter('action'));
     var userId = getParameter('userId');
     var userStatus = getParameter('action');
+    var spassword = sessionStorage.getItem('adminPass');
+    var smail = sessionStorage.getItem('adminMail');
     getUser();
     function getParameter( paramName ){
         let parameters = new URLSearchParams(window.location.search);
@@ -16,6 +18,9 @@ $(document).ready(function () {
         $.ajax({
             url: "https://localhost:44337/api/users/"+userId,           
             method:"get",
+            headers:{
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
             complete: function(xmlHttp,status){
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;
@@ -46,9 +51,10 @@ $(document).ready(function () {
     function putUser(){
         $.ajax({
             url: "https://localhost:44337/api/users/"+userId,           
-            method:"put",
+            method:"put",            
             headers:{
-                contentType:"application.json"
+                contentType:"application.json",
+                Authorization: "Basic "+btoa(smail+":"+spassword)
             },
             data:{
                 Email: email,

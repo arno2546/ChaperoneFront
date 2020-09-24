@@ -7,6 +7,8 @@ $(document).ready(function () {
     var reqId = getParameter('reqId');
     console.log(getParameter('reqId'));
     console.log(getParameter('action'));
+    var spassword = sessionStorage.getItem('genPass');
+    var smail = sessionStorage.getItem('genMail');
     getRequest();
     function getParameter( paramName ){
         let parameters = new URLSearchParams(window.location.search);
@@ -17,6 +19,9 @@ $(document).ready(function () {
         $.ajax({
             url: "https://localhost:44337/api/requests/"+reqId,           
             method:"get",
+            headers:{
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
             complete: function(xmlHttp,status){
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;
@@ -39,7 +44,9 @@ $(document).ready(function () {
             url: "https://localhost:44337/api/requests/"+reqId,           
             method:"put",
             headers:{
-                contentType:"application.json"
+                contentType:"application.json",                
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+                
             },
             data:{
                 Location: reqLocation,

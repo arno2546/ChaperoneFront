@@ -70,6 +70,9 @@ $(document).ready(function () {
             url: "https://localhost:44337/api/users/"+sid,           
             method:"put",
             headers:{
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
+            headers:{
                 contentType:"application.json"
             },
             data:{

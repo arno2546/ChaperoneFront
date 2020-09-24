@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    getGenderRatio();
+    
     var admin;
     var guide;
     var tourist;
@@ -7,12 +7,17 @@ $(document).ready(function () {
     var guideRatio;
     var touristRatio;
     console.log(admin);
-    
+    var spassword = sessionStorage.getItem('adminPass');
+    var smail = sessionStorage.getItem('adminMail');   
+    getGenderRatio(); 
 
     function getGenderRatio(){
         $.ajax({
             url: "https://localhost:44337/api/userRatio",           
             method:"get",
+            headers:{
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
             complete: function(xmlHttp,status){
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;
@@ -23,7 +28,7 @@ $(document).ready(function () {
                     adminRatio = (admin/total)*100;
                     guideRatio = (guide/total)*100;
                     touristRatio = (tourist/total)*100;
-                    displayGenderRatio();
+                    displayUserRatio();
                     console.log(adminRatio);
                     console.log(touristRatio);                                        
                 }
@@ -34,7 +39,7 @@ $(document).ready(function () {
         });
     }
 
-    function displayGenderRatio(){
+    function displayUserRatio(){
         let ctx = document.getElementById('userChart').getContext('2d');
         let labels = ['Admin', 'Guide','Tourist'];
         let colorHex = ['#6A2CDD ', '#11AFA6 ','#69DB0F'];

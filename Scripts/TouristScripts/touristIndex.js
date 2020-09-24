@@ -102,7 +102,9 @@ $(document).ready(function () {
             url:"https://localhost:44337/api/search",
             method:"post",
             headers:{
-                contentType:"application.json"
+                contentType:"application.json",                
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+                
             },
             data:{
                 SearchString:$("#SearchString").val(),

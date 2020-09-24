@@ -6,7 +6,8 @@ $(document).ready(function () {
     console.log(getParameter('action'));
     var reqId = getParameter('reqId');
     var reqState = getParameter('action');
-    
+    var spassword = sessionStorage.getItem('guidePass');
+    var smail = sessionStorage.getItem('guideMail');
     getRequest();
     
     
@@ -19,6 +20,9 @@ $(document).ready(function () {
         $.ajax({
             url: "https://localhost:44337/api/requests/"+reqId,           
             method:"get",
+            headers:{
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
             complete: function(xmlHttp,status){
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;
@@ -40,7 +44,8 @@ $(document).ready(function () {
             url: "https://localhost:44337/api/requests/"+reqId,           
             method:"put",
             headers:{
-                contentType:"application.json"
+                contentType:"application.json",
+                Authorization: "Basic "+btoa(smail+":"+spassword)
             },
             data:{
                 Location: reqLocation,

@@ -34,6 +34,9 @@ $(document).ready(function () {
         $.ajax({
             url: "https://localhost:44337/api/requests",           
             method:"get",
+            headers:{
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
             complete: function(xmlHttp,status){
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;
@@ -57,6 +60,9 @@ $(document).ready(function () {
         $.ajax({
             url: "https://localhost:44337/api/users",           
             method:"get",
+            headers:{
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
             complete: function(xmlHttp,status){
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;

@@ -1,16 +1,21 @@
-$(document).ready(function () {
-    getGenderRatio();
+$(document).ready(function () {    
     var male;
     var female;
     var maleRatio;
     var femaleRatio;
     console.log(male);
+    var spassword = sessionStorage.getItem('adminPass');
+    var smail = sessionStorage.getItem('adminMail');
+    getGenderRatio();
     
 
     function getGenderRatio(){
         $.ajax({
             url: "https://localhost:44337/api/genderRatio",           
             method:"get",
+            headers:{
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
             complete: function(xmlHttp,status){
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;

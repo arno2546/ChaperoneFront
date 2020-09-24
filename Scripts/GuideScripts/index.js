@@ -130,7 +130,8 @@ $(document).ready(function () {
             url: "https://localhost:44337/api/users/"+sid,           
             method:"put",
             headers:{
-                contentType:"application.json"
+                contentType:"application.json",                
+                Authorization: "Basic "+btoa(smail+":"+spassword)                
             },
             data:{
                 Email: email,
@@ -170,6 +171,9 @@ $(document).ready(function () {
         $.ajax({
             url: "https://localhost:44337/api/users/"+sid+"/requests",           
             method:"get",
+            headers:{
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
             complete: function(xmlHttp,status){
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;

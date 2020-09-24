@@ -13,6 +13,8 @@ $(document).ready(function () {
     console.log(gId);
     console.log(sessionStorage.getItem('startDate'));
     console.log(sessionStorage.getItem('endDate'));
+    var smail = sessionStorage.getItem('genMail');
+    var sid = sessionStorage.getItem('genId');
     getGuide();
 
     function getParameter( paramName ){
@@ -24,6 +26,9 @@ $(document).ready(function () {
         $.ajax({
             url: "https://localhost:44337/api/users/"+gId,           
             method:"get",
+            headers:{
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
             complete: function(xmlHttp,status){
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;
@@ -70,7 +75,11 @@ $(document).ready(function () {
             url: "https://localhost:44337/api/requests",           
             method:"post",
             headers:{
-                contentType:"application.json"
+                Authorization: "Basic "+btoa(smail+":"+spassword)
+            },
+            headers:{
+                contentType:"application.json",                
+                Authorization: "Basic "+btoa(smail+":"+spassword)                
             },
             data:{
                 Location:$("#location").html(),
