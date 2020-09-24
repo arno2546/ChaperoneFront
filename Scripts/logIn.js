@@ -64,6 +64,16 @@ $(document).ready(function () {
                         sessionStorage.setItem('genMail',Email);
                         window.location.href = 'http://localhost/ChaperoneFront/Views/TouristViews/TouristIndex.html';
                     }
+                    if(LogInfo.UserType=="Admin"){
+                        $("#loginMsg").html("Admin");
+                        sessionStorage.setItem('adminloggedIn','true');
+                        sessionStorage.setItem('adminUname',LogInfo.UserName);
+                        sessionStorage.setItem('adminId',LogInfo.Id);
+                        sessionStorage.setItem('adminCon',LogInfo.Contact);
+                        sessionStorage.setItem('adminPass',Password);
+                        sessionStorage.setItem('adminMail',Email);
+                        window.location.href = 'http://localhost/ChaperoneFront/Views/AdminViews/AdminIndex.html';
+                    }
                     console.log(LogInfo);
                 }
                 else{
