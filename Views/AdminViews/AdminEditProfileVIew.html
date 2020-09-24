@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
     <script src="../../Scripts/jquery-3.5.1.js"></script>
-    <script src="../../Scripts/AdminScripts/adminIndex.js"></script>
+    <script src="../../Scripts/AdminScripts/adminEditProfile.js"></script>
+    
 </head>
 <body>
     <header>
@@ -35,9 +36,8 @@
             </div>
           </nav>
      </header>
-     <h3 id="WelcomeLable"></h3><hr>
+     <h3 id="WelcomeLable">Admin(s):</h3><hr>
      <div id="main-content" class="container">
-        <h3 id="Lable">User(s):</h3><hr>
         <div id="users">
             <table id="userTable" class="table table-dark">
               <thead id="userTableHead">
@@ -46,16 +46,35 @@
               <tbody id="userTableBody"></tbody>
             </table><hr>
           </div>
-        <h3 id="Lable">Request(s):</h3><hr>
-        <div id="requests">
-            <table id="reqTable" class="table table-dark">
-              <thead id="reqTableHead">
-                
-              </thead>
-              <tbody id="reqTableBody"></tbody>
-            </table><hr>
-          </div>
+          <h3 id="Lable">Edit Profile:</h3><hr>
      </div>
-     
+     <div id="GuideForm" class="container">
+        <form>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email1" placeholder="name@example.com">
+              <span id="emailErr"> </span>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name1" placeholder="Type name here">
+                <span id="nameErr"> </span>
+              </div>
+            <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password1" placeholder="Choose a strong password">
+            <span id="nameErr"> </span>
+            </div>            
+            <div class="form-group">
+                <label for="contact">Contact</label>
+                <input type="text" class="form-control" id="contact1" placeholder="Contact Number">
+                <span id="contactErr"> </span>
+            </div>            
+
+            <div id="submit-btn" class="container">
+                <button id="submitButton1" type="button" class="btn btn-dark">Submit</button>
+            </div>
+          </form>
+        </div>
 </body>
 </html>
