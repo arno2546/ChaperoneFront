@@ -16,6 +16,11 @@ $(document).ready(function () {
     getRequests();
     getUsers();
 
+    $("#logOut").click(function(){ 
+        sessionStorage.clear();
+        window.location.replace("http://localhost/ChaperoneFront/Views/logIn.html");
+    });
+    
     function setVal(){
         $("title").html("Chaparone: "+suname);
         $("#logOut").html("Logout("+suname+")");
@@ -33,11 +38,11 @@ $(document).ready(function () {
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;
                     var str = '';
-                    var tableHead = "<th scope=\"col\">Location</th><th scope=\"col\">Tourist Id</th><th scope=\"col\">Request Status</th><th scope=\"col\">Actions</th>";
+                    var tableHead = "<th scope=\"col\">Location</th><th scope=\"col\">Tourist Id</th><th scope=\"col\">Request Status</th>";
                     
                     $(reqTableHead).html(tableHead);
                     for(var i = 0; i<data.length;i++){
-                        str+="<tr><td>"+data[i].Location +"</td><td>"+data[i].TouristId +"</td><td>"+data[i].RequestState+"</td>";                           str+="<td></td><tr>";
+                        str+="<tr><td>"+data[i].Location +"</td><td>"+data[i].TouristId +"</td><td>"+data[i].RequestState+"</td>";                          
                         }
                         $("#reqTableBody").html(str);                      
                 }
@@ -56,20 +61,20 @@ $(document).ready(function () {
                 if(xmlHttp.status==200){
                     var data = xmlHttp.responseJSON;
                     var str = '';
-                    var tableHead = "<th scope=\"col\">Name</th><th scope=\"col\">Email</th><th scope=\"col\">User Type</th><th scope=\"col\">Location</th><th scope=\"col\">Actions</th>";
+                    var tableHead = "<th scope=\"col\">Name</th><th scope=\"col\">Email</th><th scope=\"col\">User Type</th><th scope=\"col\">Location</th><th scope=\"col\">Status</th><th scope=\"col\">Actions</th>";
                     
                     $(userTableHead).html(tableHead);
                     for(var i = 0; i<data.length;i++){
                         if(data[i].UserType!="Admin"){
-                        str+="<tr><td>"+data[i].Name +"</td><td>"+data[i].Email +"</td><td>"+data[i].UserType+"</td><td>"+data[i].Location+"</td>";                          
-                        if(data[i].Status=="Active"){
-                            str+="<td><a href=\"\">Ban</a></td><tr>";
-                        }else{
-                            str+="<td><a href=\"\">Unbann</a></td><tr>";
-                        }                        
+                            str+="<tr><td>"+data[i].Name +"</td><td>"+data[i].Email +"</td><td>"+data[i].UserType+"</td><td>"+data[i].Location+"</td><td>"+data[i].Status+"</td>";                          
+                            if(data[i].Status=="Active"){
+                                str+="<td><a href=\"http://localhost/ChaperoneFront/Views/AdminViews/AdminStatusHandler.html?action=Banned&userId="+data[i].UserId+"\">Ban</a></td><tr>";
+                            }else{
+                                str+="<td><a href=\"http://localhost/ChaperoneFront/Views/AdminViews/AdminStatusHandler.html?action=Active&userId="+data[i].UserId+"\">Unbann</a></td><tr>";
+                            }                        
                         }
                     }
-                        $("#userTableBody").html(str);                      
+                    $("#userTableBody").html(str);                      
                 }
                 else{
                     console.log(xmlHttp.status+":"+xmlHttp.statusText); 
