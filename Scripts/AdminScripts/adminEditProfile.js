@@ -13,7 +13,7 @@ $(document).ready(function () {
     var sid = sessionStorage.getItem('adminId');
     var scontact = sessionStorage.getItem('adminCon');
     setVal();
-    alert(btoa(smail+":"+spassword));
+    //alert(btoa(smail+":"+spassword));
     var autho = btoa(smail+":"+spassword);
     console.log(autho);
     $("#logOut").click(function(){ 
