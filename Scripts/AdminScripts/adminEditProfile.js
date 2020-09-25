@@ -13,7 +13,9 @@ $(document).ready(function () {
     var sid = sessionStorage.getItem('adminId');
     var scontact = sessionStorage.getItem('adminCon');
     setVal();
-    
+    alert(btoa(smail+":"+spassword));
+    var autho = btoa(smail+":"+spassword);
+    console.log(autho);
     $("#logOut").click(function(){ 
         sessionStorage.clear();
         window.location.replace("http://localhost/ChaperoneFront/Views/logIn.html");
@@ -68,12 +70,10 @@ $(document).ready(function () {
     function updateAdmin(){
         $.ajax({
             url: "https://localhost:44337/api/users/"+sid,           
-            method:"put",
+            method:"put",            
             headers:{
+                contentType:"application.json",
                 Authorization: "Basic "+btoa(smail+":"+spassword)
-            },
-            headers:{
-                contentType:"application.json"
             },
             data:{
                 Email: email,
@@ -81,17 +81,17 @@ $(document).ready(function () {
                 Password: password,
                 Contact: contact,
                 UserType: "Admin",
-                Status: "Active"       
+                Status: "Active"
             },
             complete:function(xmlHttp,status){
                 if(xmlHttp.status==200){
-                   alert("Successfully Updated Profile");
-                   smail=email;
-                   suname=name;
-                   scontact=contact;
-                   spassword=password;
-                   setVal();
-                }
+                    alert("Successfully Updated Admin:"+name);
+                    suname=name;
+                    smail=email;
+                    spassword=password;
+                    scontact=contact;
+                    setVal();                
+                }               
                 else{
                     console.log(xmlHttp.status+":"+xmlHttp.statusText); 
                 }

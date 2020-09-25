@@ -95,10 +95,8 @@ $(document).ready(function () {
             url: "https://localhost:44337/api/users",           
             method:"post",
             headers:{
-                Authorization: "Basic "+btoa(smail+":"+spassword)
-            },
-            headers:{
-                contentType:"application.json"
+                contentType:"application.json",
+                Authorization: "Basic "+btoa(smail+":"+spassword)        
             },
             data:{
                 Email: email,
