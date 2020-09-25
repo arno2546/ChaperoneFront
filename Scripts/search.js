@@ -107,8 +107,7 @@ $(document).ready(function(){
                     $("#resultLable").html("Result(s):");
                     $("#line").html("<hr>");
                     //window.location.replace("../views/searchResults.html");
-                    if(guides.length<1){
-                        $("#errMsg").html("Sorry No results found :(");
+                    if(guides.length<1){                       
                         alert("No result");
                     }
                     for(var i=0;i<guides.length;i++){
