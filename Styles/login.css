@@ -1,0 +1,23 @@
+body{
+    background-color: #808B96 ;
+}
+#loginDiv{
+    width: 30%;
+    margin-top:20%;
+    text-align: center;
+    background-color: #273746;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px #17202A;
+}
+
+#loginDiv>a:hover{
+    text-decoration: none;
+}
+
+#loginDiv>a{
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    color: aliceblue;
+}
