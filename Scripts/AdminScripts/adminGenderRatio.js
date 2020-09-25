@@ -44,7 +44,7 @@ $(document).ready(function () {
             type: 'pie',
             data: {
                 datasets: [{
-                data: [maleRatio, femaleRatio],
+                data: [maleRatio.toPrecision(3), femaleRatio.toPrecision(3)],
                 backgroundColor: colorHex
                 }],
                 labels: labels
