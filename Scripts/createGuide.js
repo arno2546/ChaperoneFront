@@ -25,35 +25,41 @@ $(document).ready(function () {
         gender = $("#genderSelect").val();
         language= $("#langSelect").val();
         bio= $("#bio").val();
-        if(email.trim()==""){
-            alert("Email cannot be empty");
-            // use this $("#emailErr").html("Email cannot be empty");
-        }else if(!email.includes("@") || !email.includes(".com")){
-            alert("Enter proper Email address");
-            validation=false;
-        }
-        if(name.trim()==""){
-            alert("Name cannot be empty");
-            validation=false;
-        }
-        if(password.trim()==""){
-            alert("Password cannot be empty");
-            validation=false;
-        }
-        if(location.trim()==""){
-            alert("Location cannot be empty");
-            validation=false;
-        }
-        if(contact.trim()==""){
-            alert("Contact cannot be empty");
-            validation=false;
-        }else{
-            validation=true;
-        }
-        if(validation){
+        
+        
+        if(validate()){
             createGuide();
         }
     });
+
+    function validate(){
+        if(email.trim()==""){
+            alert("Email cannot be empty");
+            return false;
+        }else if(!email.includes("@") || !email.includes(".com")){
+            alert("Enter proper Email address");
+            return false;
+        }
+        if(name.trim()==""){
+            alert("Name cannot be empty");
+            return false;
+        }
+        if(password.trim()==""){
+            alert("Password cannot be empty");
+            return false;
+        }
+        if(location.trim()==""){
+            alert("Location cannot be empty");
+            return false;
+        }
+        if(contact.trim()==""){
+            alert("Contact cannot be empty");
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     $("#CultureCheck").change(function(){
         if(this.checked){
             checkCulture=true;
@@ -135,6 +141,7 @@ $(document).ready(function () {
                     $("#genderSelect").val("");
                     $("#langSelect").val("");
                     $("#bio").val("");
+                    window.location.href = "http://localhost/ChaperoneFront/Views/logIn.html";
                 }
                 else{
                     console.log(xmlHttp.status+":"+xmlHttp.statusText); 

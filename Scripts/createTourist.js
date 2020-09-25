@@ -18,36 +18,41 @@ $(document).ready(function () {
         location = $("#location1").val();
         contact = $("#contact1").val();
         language= $("#langSelect1").val();
-        if(email.trim()==""){
-            alert("Email cannot be empty");
-        }
-        else if(!email.includes("@") || !email.includes(".com")){
-            alert("Enter proper Email address");
-            validation=false;
-        }
-        if(name.trim()==""){
-            alert("Name cannot be empty");
-            validation=false;
-        }
-        if(password.trim()==""){
-            alert("Password cannot be empty");
-            validation=false;
-        }
-        if(location.trim()==""){
-            alert("Location cannot be empty");
-            validation=false;
-        }
-        if(contact.trim()==""){
-            alert("Contact cannot be empty");
-            validation=false;
-        }else{
-            validation=true;
-        }
-        if(validation){
+        
+        if(validate()){
             createTourist();
         }
     });
     
+    function validate(){
+        if(email.trim()==""){
+            alert("Email cannot be empty");
+            return false;
+        }
+        else if(!email.includes("@") || !email.includes(".com")){
+            alert("Enter proper Email address");
+            return false;
+        }
+        if(name.trim()==""){
+            alert("Name cannot be empty");
+            return false;
+        }
+        if(password.trim()==""){
+            alert("Password cannot be empty");
+            return false;
+        }
+        if(location.trim()==""){
+            alert("Location cannot be empty");
+            return false;
+        }
+        if(contact.trim()==""){
+            alert("Contact cannot be empty");
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     function createTourist(){
         $.ajax({
             url: "https://localhost:44337/api/users",           
@@ -74,6 +79,7 @@ $(document).ready(function () {
                     $("#location1").val("");
                     $("#contact1").val("");
                     $("#langSelect1").val("");
+                    window.location.href = "http://localhost/ChaperoneFront/Views/logIn.html";
                 }
                
                 else{
