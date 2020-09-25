@@ -33,35 +33,40 @@ $(document).ready(function () {
         touristlocation = $("#location1").val();
         contact = $("#contact1").val();
         language= $("#langSelect1").val();
+        if(validate()){
+            updateTourist();
+        }
+        
+    });
+
+    function validate(){
         if(email.trim()==""){
             alert("Email cannot be empty");
+            return false;
         }
         else if(!email.includes("@") || !email.includes(".com")){
             alert("Enter proper Email address");
-            validation=false;
+            return false;
         }
         if(name.trim()==""){
             alert("Name cannot be empty");
-            validation=false;
+            return false;
         }
         if(password.trim()==""){
             alert("Password cannot be empty");
-            validation=false;
+            return false;
         }
         if(touristlocation.trim()==""){
             alert("Location cannot be empty");
-            validation=false;
+             return false;
         }
         if(contact.trim()==""){
             alert("Contact cannot be empty");
-            validation=false;
+            return false;
         }else{
-            validation=true;
-        }
-        if(validation){
-            updateTourist();
-        }
-    });
+            return true;
+        }        
+    }
 
     function setVal(){
         $("title").html("Chaparone: "+suname);
