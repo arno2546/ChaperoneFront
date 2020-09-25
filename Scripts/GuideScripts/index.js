@@ -162,6 +162,8 @@ $(document).ready(function () {
                    suname=name;
                    scontact=contact;
                    spassword=password;
+                   sessionStorage.setItem('guideUname',name);
+                   sessionStorage.setItem('guideMail',name);
                    setVal();
                 }
                 else{
@@ -170,7 +172,6 @@ $(document).ready(function () {
             }
        })
     }
-
     function getRequests(){
         $.ajax({
             url: "https://localhost:44337/api/users/"+sid+"/requests",           
