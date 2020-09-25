@@ -44,37 +44,40 @@ $(document).ready(function () {
             complete:function(xmlHttp,status){
                 if(xmlHttp.status==200){
                     var LogInfo = xmlHttp.responseJSON;
-                    if(LogInfo.UserType=="Guide"){
-                        $("#loginMsg").html("Guide");
-                        sessionStorage.setItem('GuideloggedIn','true');
-                        sessionStorage.setItem('guideUname',LogInfo.UserName);
-                        sessionStorage.setItem('guideId',LogInfo.Id);
-                        sessionStorage.setItem('guideCon',LogInfo.Contact);
-                        sessionStorage.setItem('guidePass',Password);
-                        sessionStorage.setItem('guideMail',Email);
-                        window.location.href = 'http://localhost/ChaperoneFront/Views/GuideViews/';
-                    } 
-                    if(LogInfo.UserType=="Gen"){
-                        $("#loginMsg").html("Gen");
-                        sessionStorage.setItem('genloggedIn','true');
-                        sessionStorage.setItem('genUname',LogInfo.UserName);
-                        sessionStorage.setItem('genId',LogInfo.Id);
-                        sessionStorage.setItem('genCon',LogInfo.Contact);
-                        sessionStorage.setItem('genPass',Password);
-                        sessionStorage.setItem('genMail',Email);
-                        window.location.href = 'http://localhost/ChaperoneFront/Views/TouristViews/TouristIndex.html';
+                    if(LogInfo.Status=="Active"){
+                        if(LogInfo.UserType=="Guide"){
+                            $("#loginMsg").html("Guide");
+                            sessionStorage.setItem('GuideloggedIn','true');
+                            sessionStorage.setItem('guideUname',LogInfo.UserName);
+                            sessionStorage.setItem('guideId',LogInfo.Id);
+                            sessionStorage.setItem('guideCon',LogInfo.Contact);
+                            sessionStorage.setItem('guidePass',Password);
+                            sessionStorage.setItem('guideMail',Email);
+                            window.location.href = 'http://localhost/ChaperoneFront/Views/GuideViews/';
+                        } 
+                        if(LogInfo.UserType=="Gen"){
+                            $("#loginMsg").html("Gen");
+                            sessionStorage.setItem('genloggedIn','true');
+                            sessionStorage.setItem('genUname',LogInfo.UserName);
+                            sessionStorage.setItem('genId',LogInfo.Id);
+                            sessionStorage.setItem('genCon',LogInfo.Contact);
+                            sessionStorage.setItem('genPass',Password);
+                            sessionStorage.setItem('genMail',Email);
+                            window.location.href = 'http://localhost/ChaperoneFront/Views/TouristViews/TouristIndex.html';
+                        }
+                        if(LogInfo.UserType=="Admin"){
+                            $("#loginMsg").html("Admin");
+                            sessionStorage.setItem('adminloggedIn','true');
+                            sessionStorage.setItem('adminUname',LogInfo.UserName);
+                            sessionStorage.setItem('adminId',LogInfo.Id);
+                            sessionStorage.setItem('adminCon',LogInfo.Contact);
+                            sessionStorage.setItem('adminPass',Password);
+                            sessionStorage.setItem('adminMail',Email);
+                            window.location.href = 'http://localhost/ChaperoneFront/Views/AdminViews/AdminIndex.html';
+                        }
+                    }else{
+                        alert("You have been Banned!! Contact at admin@chaperone.com for more info");
                     }
-                    if(LogInfo.UserType=="Admin"){
-                        $("#loginMsg").html("Admin");
-                        sessionStorage.setItem('adminloggedIn','true');
-                        sessionStorage.setItem('adminUname',LogInfo.UserName);
-                        sessionStorage.setItem('adminId',LogInfo.Id);
-                        sessionStorage.setItem('adminCon',LogInfo.Contact);
-                        sessionStorage.setItem('adminPass',Password);
-                        sessionStorage.setItem('adminMail',Email);
-                        window.location.href = 'http://localhost/ChaperoneFront/Views/AdminViews/AdminIndex.html';
-                    }
-                    console.log(LogInfo);
                 }
                 else{
                     alert("User dont exist");
