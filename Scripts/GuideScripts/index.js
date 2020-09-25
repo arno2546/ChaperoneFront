@@ -43,32 +43,36 @@ $(document).ready(function () {
         gender = $("#genderSelect").val();
         language= $("#langSelect").val();
         bio= $("#bio").val();
-        if(email.trim()==""){
-            alert("Email cannot be empty");
-            // use this $("#emailErr").html("Email cannot be empty");
-        }
-        if(name.trim()==""){
-            alert("Name cannot be empty");
-            validation=false;
-        }
-        if(password.trim()==""){
-            alert("Password cannot be empty");
-            validation=false;
-        }
-        if(location.trim()==""){
-            alert("Location cannot be empty");
-            validation=false;
-        }
-        if(contact.trim()==""){
-            alert("Contact cannot be empty");
-            validation=false;
-        }else{
-            validation=true;
-        }
-        if(validation){
+        
+        if(validate()){
             updateGuide();
         }
     });
+
+    function validate(){
+        if(email.trim()==""){
+            alert("Email cannot be empty");
+            return false;
+        }
+        if(name.trim()==""){
+            alert("Name cannot be empty");
+            return false;
+        }
+        if(password.trim()==""){
+            alert("Password cannot be empty");
+            return false;
+        }
+        if(location.trim()==""){
+            alert("Location cannot be empty");
+            return false;
+        }
+        if(contact.trim()==""){
+            alert("Contact cannot be empty");
+            return false;
+        }else{
+            return true;
+        }
+    }
 
     $("#CultureCheck").change(function(){
         if(this.checked){
