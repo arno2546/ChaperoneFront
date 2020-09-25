@@ -93,9 +93,28 @@ $(document).ready(function () {
         //             +checkNightLife+" "+checkSports+" "+femaleCheck+" "+maleCheck;
        $("#msg").html("");
         //window.location.replace("../views/searchResults.html");
-
-        getSearchResults();
+        if(validate()){
+            getSearchResults();
+        }        
     });
+
+    function validate(){
+        if($("#SearchString").val().trim()==""){
+            alert("Please enter a Loation")
+            return false;            
+        }
+        if($("#startDate").val().trim()==""){
+            alert("Please enter a Start Date")
+            return false;
+        }
+        if($("#endDate").val().trim()==""){
+            alert("Please enter a End Date")
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 
     function getSearchResults(){
         $.ajax({
