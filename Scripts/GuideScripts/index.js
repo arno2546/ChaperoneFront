@@ -163,7 +163,8 @@ $(document).ready(function () {
                    scontact=contact;
                    spassword=password;
                    sessionStorage.setItem('guideUname',name);
-                   sessionStorage.setItem('guideMail',name);
+                   sessionStorage.setItem('guideMail',email);
+                   sessionStorage.setItem('guidePass',password);
                    setVal();
                 }
                 else{

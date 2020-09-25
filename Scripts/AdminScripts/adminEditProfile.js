@@ -90,6 +90,9 @@ $(document).ready(function () {
                     smail=email;
                     spassword=password;
                     scontact=contact;
+                    sessionStorage.setItem('adminPass',password);
+                    sessionStorage.setItem('adminMail',email);
+                    sessionStorage.setItem('adminUname',name);
                     setVal();                
                 }               
                 else{

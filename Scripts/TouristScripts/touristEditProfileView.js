@@ -104,6 +104,9 @@ $(document).ready(function () {
                    suname=name;
                    scontact=contact;
                    spassword=password;
+                   sessionStorage.setItem('genUname',name);
+                   sessionStorage.setItem('genMail',email);
+                   sessionStorage.setItem('genPass',password);
                    setVal();
                 }
                 else{
